@@ -1,5 +1,12 @@
 {
   "baseUrl": "https://reqres.in/api",
   "screenshotOnRunFailure": false,
-  "video": false
+  "video": false,
+  "reporter": "mochawesome",
+  "reporterOptions": {
+    "reportDir": "reports/json",
+    "overwrite": false,
+    "html": false,
+    "json": true
+  }
 }
