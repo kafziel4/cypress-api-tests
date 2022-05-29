@@ -1,4 +1,5 @@
 {
+  "baseUrl": "https://reqres.in/api",
   "screenshotOnRunFailure": false,
   "video": false
 }
