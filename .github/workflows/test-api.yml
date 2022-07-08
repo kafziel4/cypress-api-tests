@@ -27,7 +27,7 @@ jobs:
       # Run tests
       - name: Run Tests
         run: |
-          npm test
+          npm run cy-run; npm run report-final
           
       # Upload the contents of reports directory to workspace
       - name: Upload Reports

@@ -17,7 +17,7 @@ A workflow is set up to install Node.js, install the required packages, run the 
 
 - Install [Node.js](https://nodejs.org/en/)
 - Install the project packages: `npm install`
-- Run the tests and generate the report: `npm test`
+- Run the tests and generate the report (Windows): `npm test`
 - Delete previous reports (Windows): `npm run report-clean`
 
 ![cypress-run](assets/cypress-run.gif)
