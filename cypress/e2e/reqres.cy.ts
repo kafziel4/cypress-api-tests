@@ -1,7 +1,7 @@
 import * as fixtures from '../fixtures';
 import * as Types from '../types';
 
-const oneToThreeDigits = /\d{1,3}/;
+const oneToThreeDigits = /^\d{1,3}$/;
 const dateInISOFormat = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}.\d{3}Z$/;
 
 describe('ReqRes API', () => {
