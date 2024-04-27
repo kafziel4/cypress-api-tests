@@ -5,9 +5,9 @@
     "passes": 2,
     "pending": 0,
     "failures": 0,
-    "start": "2024-04-27T03:41:44.765Z",
-    "end": "2024-04-27T03:41:45.259Z",
-    "duration": 494,
+    "start": "2024-04-27T03:43:23.343Z",
+    "end": "2024-04-27T03:43:23.849Z",
+    "duration": 506,
     "testsRegistered": 2,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "66d4563d-ef36-4a87-b055-50f4e60d542b",
+      "uuid": "ecd09e57-67de-492d-a509-76526add522b",
       "title": "",
       "fullFile": "cypress/e2e/login.cy.ts",
       "file": "cypress/e2e/login.cy.ts",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "e3c57ca6-37ab-41e9-9baa-7108b988980d",
+          "uuid": "4d764bde-6043-4b50-b0fe-08974aa59c3a",
           "title": "ReqRes API Login endpoints",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "POST to /login with valid data should return status 200 and the login token",
               "fullTitle": "ReqRes API Login endpoints POST to /login with valid data should return status 200 and the login token",
               "timedOut": null,
-              "duration": 235,
+              "duration": 249,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -47,8 +47,8 @@
               "context": null,
               "code": "// Arrange\nconst requestBody = {\n    email: 'eve.holt@reqres.in',\n    password: 'pistol',\n};\nconst expectedResponse = {\n    token: 'QpwL5tke4Pnpja7X4',\n};\n// Act\nrequests.postLogin(requestBody).should((response) => {\n    // Assert\n    expect(response.status).to.equal(200);\n    expect(response.headers[constants_1.headers.contentType]).to.equal(constants_1.jsonContentType);\n    expect(response.body).to.deep.equal(expectedResponse);\n});",
               "err": {},
-              "uuid": "99db404e-7eee-4e18-949a-023e1c09e56d",
-              "parentUUID": "e3c57ca6-37ab-41e9-9baa-7108b988980d",
+              "uuid": "19832f05-dac5-4f97-a59f-53db4defa5cd",
+              "parentUUID": "4d764bde-6043-4b50-b0fe-08974aa59c3a",
               "isHook": false,
               "skipped": false
             },
@@ -56,7 +56,7 @@
               "title": "POST to /login with missing password should return status 400 and the validation error",
               "fullTitle": "ReqRes API Login endpoints POST to /login with missing password should return status 400 and the validation error",
               "timedOut": null,
-              "duration": 221,
+              "duration": 208,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -65,21 +65,21 @@
               "context": null,
               "code": "// Arrange\nconst requestBody = {\n    email: 'peter@klaven',\n};\nconst expectedResponse = {\n    error: constants_1.missingPassword,\n};\n// Act\nrequests.postLogin(requestBody).should((response) => {\n    // Assert\n    expect(response.status).to.equal(400);\n    expect(response.headers[constants_1.headers.contentType]).to.equal(constants_1.jsonContentType);\n    expect(response.body).to.deep.equal(expectedResponse);\n});",
               "err": {},
-              "uuid": "145a1c6d-25ed-4e66-877c-b348517ecb70",
-              "parentUUID": "e3c57ca6-37ab-41e9-9baa-7108b988980d",
+              "uuid": "cddbd808-d971-467b-9e9e-ce7c7b8e73bf",
+              "parentUUID": "4d764bde-6043-4b50-b0fe-08974aa59c3a",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "99db404e-7eee-4e18-949a-023e1c09e56d",
-            "145a1c6d-25ed-4e66-877c-b348517ecb70"
+            "19832f05-dac5-4f97-a59f-53db4defa5cd",
+            "cddbd808-d971-467b-9e9e-ce7c7b8e73bf"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 456,
+          "duration": 457,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

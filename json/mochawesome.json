@@ -5,9 +5,9 @@
     "passes": 3,
     "pending": 0,
     "failures": 0,
-    "start": "2024-04-27T03:41:42.512Z",
-    "end": "2024-04-27T03:41:43.299Z",
-    "duration": 787,
+    "start": "2024-04-27T03:43:21.056Z",
+    "end": "2024-04-27T03:43:21.838Z",
+    "duration": 782,
     "testsRegistered": 3,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "66fce8d2-fb5e-44dd-a600-0f9e42e99cd4",
+      "uuid": "67479a4f-8d2c-4a15-8bb2-087c1c87a0aa",
       "title": "",
       "fullFile": "cypress/e2e/colors.cy.ts",
       "file": "cypress/e2e/colors.cy.ts",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "71f8e9e6-b9a3-440f-ae2b-de77318a0c17",
+          "uuid": "fc60a80c-80c9-45d7-b249-fc140556897f",
           "title": "ReqRes API Colors endpoints",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "GET to /colors should return status 200 and a list of colors",
               "fullTitle": "ReqRes API Colors endpoints GET to /colors should return status 200 and a list of colors",
               "timedOut": null,
-              "duration": 282,
+              "duration": 273,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -47,8 +47,8 @@
               "context": null,
               "code": "// Arrange\nconst expectedResponse = colors_1.colors;\n// Act\nrequests.getColors().should((response) => {\n    // Assert\n    expect(response.status).to.equal(200);\n    expect(response.headers[constants_1.headers.contentType]).to.equal(constants_1.jsonContentType);\n    expect(response.body).to.deep.include(expectedResponse);\n});",
               "err": {},
-              "uuid": "ebee4763-b94f-4182-8ae9-3372b17b1d38",
-              "parentUUID": "71f8e9e6-b9a3-440f-ae2b-de77318a0c17",
+              "uuid": "3d2ef5b5-5432-46f2-806b-d84ab79b1fc3",
+              "parentUUID": "fc60a80c-80c9-45d7-b249-fc140556897f",
               "isHook": false,
               "skipped": false
             },
@@ -56,7 +56,7 @@
               "title": "GET to /colors/id for an existing color should return status 200 and the color data",
               "fullTitle": "ReqRes API Colors endpoints GET to /colors/id for an existing color should return status 200 and the color data",
               "timedOut": null,
-              "duration": 229,
+              "duration": 232,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -65,8 +65,8 @@
               "context": null,
               "code": "// Arrange\nconst expectedResponse = {\n    data: {\n        id: 2,\n        name: 'fuchsia rose',\n        year: 2001,\n        color: '#C74375',\n        pantone_value: '17-2031',\n    },\n};\n// Act\nrequests.getSingleColor(expectedResponse.data.id).should((response) => {\n    // Assert\n    expect(response.status).to.equal(200);\n    expect(response.headers[constants_1.headers.contentType]).to.equal(constants_1.jsonContentType);\n    expect(response.body).to.deep.include(expectedResponse);\n});",
               "err": {},
-              "uuid": "8d4dc299-c4fa-46a9-9016-2a7222fa9d81",
-              "parentUUID": "71f8e9e6-b9a3-440f-ae2b-de77318a0c17",
+              "uuid": "b2b5b42f-9d24-4a4f-8987-dd218c2ee386",
+              "parentUUID": "fc60a80c-80c9-45d7-b249-fc140556897f",
               "isHook": false,
               "skipped": false
             },
@@ -74,7 +74,7 @@
               "title": "GET to /colors/id for a color that does not exist should return status 404",
               "fullTitle": "ReqRes API Colors endpoints GET to /colors/id for a color that does not exist should return status 404",
               "timedOut": null,
-              "duration": 222,
+              "duration": 219,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -83,22 +83,22 @@
               "context": null,
               "code": "// Arrange\nconst nonexistentId = 23;\n// Act\nrequests.getSingleColor(nonexistentId).should((response) => {\n    // Assert\n    expect(response.status).to.equal(404);\n    expect(response.headers[constants_1.headers.contentType]).to.equal(constants_1.jsonContentType);\n    expect(response.body).to.be.an('object').that.is.empty;\n});",
               "err": {},
-              "uuid": "b5eb8828-4efe-4ba4-b5f0-e4a607b8d9f8",
-              "parentUUID": "71f8e9e6-b9a3-440f-ae2b-de77318a0c17",
+              "uuid": "34261d50-818f-4bc9-8d78-3f5383a89280",
+              "parentUUID": "fc60a80c-80c9-45d7-b249-fc140556897f",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "ebee4763-b94f-4182-8ae9-3372b17b1d38",
-            "8d4dc299-c4fa-46a9-9016-2a7222fa9d81",
-            "b5eb8828-4efe-4ba4-b5f0-e4a607b8d9f8"
+            "3d2ef5b5-5432-46f2-806b-d84ab79b1fc3",
+            "b2b5b42f-9d24-4a4f-8987-dd218c2ee386",
+            "34261d50-818f-4bc9-8d78-3f5383a89280"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 733,
+          "duration": 724,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

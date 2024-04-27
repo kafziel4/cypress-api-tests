@@ -5,9 +5,9 @@
     "passes": 2,
     "pending": 0,
     "failures": 0,
-    "start": "2024-04-27T03:41:47.121Z",
-    "end": "2024-04-27T03:41:47.620Z",
-    "duration": 499,
+    "start": "2024-04-27T03:43:25.707Z",
+    "end": "2024-04-27T03:43:26.202Z",
+    "duration": 495,
     "testsRegistered": 2,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "c55467ed-4b75-45a6-8896-f32aee2f22b1",
+      "uuid": "f616fbae-9db2-4500-8cb2-f1cce5a584a4",
       "title": "",
       "fullFile": "cypress/e2e/register.cy.ts",
       "file": "cypress/e2e/register.cy.ts",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "d4f29931-76d7-4108-8874-2a44e0f6f29d",
+          "uuid": "e40a3c50-3dc2-478b-a534-1cc5364f8814",
           "title": "ReqRes API Register endpoints",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "POST to /register with valid data should return status 200 and the registration id and token",
               "fullTitle": "ReqRes API Register endpoints POST to /register with valid data should return status 200 and the registration id and token",
               "timedOut": null,
-              "duration": 237,
+              "duration": 244,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -47,8 +47,8 @@
               "context": null,
               "code": "// Arrange\nconst requestBody = {\n    email: 'eve.holt@reqres.in',\n    password: 'pistol',\n};\nconst expectedResponse = {\n    id: 4,\n    token: 'QpwL5tke4Pnpja7X4',\n};\n// Act\nrequests.postRegister(requestBody).should((response) => {\n    // Assert\n    expect(response.status).to.equal(200);\n    expect(response.headers[constants_1.headers.contentType]).to.equal(constants_1.jsonContentType);\n    expect(response.body).to.deep.equal(expectedResponse);\n});",
               "err": {},
-              "uuid": "b2968ff8-2ede-40fb-bec0-f0a3c67c91fe",
-              "parentUUID": "d4f29931-76d7-4108-8874-2a44e0f6f29d",
+              "uuid": "8b542416-5b72-4050-94d9-987785f70f53",
+              "parentUUID": "e40a3c50-3dc2-478b-a534-1cc5364f8814",
               "isHook": false,
               "skipped": false
             },
@@ -56,7 +56,7 @@
               "title": "POST to /register with missing password should return status 400 and the validation error",
               "fullTitle": "ReqRes API Register endpoints POST to /register with missing password should return status 400 and the validation error",
               "timedOut": null,
-              "duration": 226,
+              "duration": 213,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -65,21 +65,21 @@
               "context": null,
               "code": "// Arrange\nconst requestBody = {\n    email: 'sydney@fife',\n};\nconst expectedResponse = {\n    error: constants_1.missingPassword,\n};\n// Act\nrequests.postRegister(requestBody).should((response) => {\n    // Assert\n    expect(response.status).to.equal(400);\n    expect(response.headers[constants_1.headers.contentType]).to.equal(constants_1.jsonContentType);\n    expect(response.body).to.deep.equal(expectedResponse);\n});",
               "err": {},
-              "uuid": "be07abb8-fffc-474e-91cd-903792774cce",
-              "parentUUID": "d4f29931-76d7-4108-8874-2a44e0f6f29d",
+              "uuid": "03500be9-3a69-4915-9280-3e520ae0314b",
+              "parentUUID": "e40a3c50-3dc2-478b-a534-1cc5364f8814",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "b2968ff8-2ede-40fb-bec0-f0a3c67c91fe",
-            "be07abb8-fffc-474e-91cd-903792774cce"
+            "8b542416-5b72-4050-94d9-987785f70f53",
+            "03500be9-3a69-4915-9280-3e520ae0314b"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 463,
+          "duration": 457,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
