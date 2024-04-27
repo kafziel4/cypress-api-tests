@@ -1,0 +1,219 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 7,
+    "passes": 7,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-04-27T03:41:49.549Z",
+    "end": "2024-04-27T03:41:50.834Z",
+    "duration": 1285,
+    "testsRegistered": 7,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "38c3da17-70b6-48f1-b64f-b46cd1c165aa",
+      "title": "",
+      "fullFile": "cypress/e2e/users.cy.ts",
+      "file": "cypress/e2e/users.cy.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "4a986501-9f89-40a3-aad4-ca81657d640f",
+          "title": "ReqRes API Users endpoints",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "GET to /users should return status 200 and a list of users",
+              "fullTitle": "ReqRes API Users endpoints GET to /users should return status 200 and a list of users",
+              "timedOut": null,
+              "duration": 53,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Arrange\nconst page = 2;\nconst expectedResponse = users_1.users;\n// Act\nrequests.getUsers(page).should((response) => {\n    // Assert\n    expect(response.status).to.equal(200);\n    expect(response.headers[constants_1.headers.contentType]).to.equal(constants_1.jsonContentType);\n    expect(response.body).to.deep.include(expectedResponse);\n});",
+              "err": {},
+              "uuid": "6637e79b-d5fc-4a7e-afa8-94f4e2e89282",
+              "parentUUID": "4a986501-9f89-40a3-aad4-ca81657d640f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "GET to /users/id for an existing user should return status 200 and the user data",
+              "fullTitle": "ReqRes API Users endpoints GET to /users/id for an existing user should return status 200 and the user data",
+              "timedOut": null,
+              "duration": 23,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Arrange\nconst expectedResponse = {\n    data: {\n        id: 2,\n        email: 'janet.weaver@reqres.in',\n        first_name: 'Janet',\n        last_name: 'Weaver',\n        avatar: 'https://reqres.in/img/faces/2-image.jpg',\n    },\n};\n// Act\nrequests.getSingleUser(expectedResponse.data.id).should((response) => {\n    // Assert\n    expect(response.status).to.equal(200);\n    expect(response.headers[constants_1.headers.contentType]).to.equal(constants_1.jsonContentType);\n    expect(response.body).to.deep.include(expectedResponse);\n});",
+              "err": {},
+              "uuid": "4d38760d-0c64-45f6-b748-06ff48949aa0",
+              "parentUUID": "4a986501-9f89-40a3-aad4-ca81657d640f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "GET to /users/id for a user that does not exist should return status 404",
+              "fullTitle": "ReqRes API Users endpoints GET to /users/id for a user that does not exist should return status 404",
+              "timedOut": null,
+              "duration": 223,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Arrange\nconst nonexistentId = 23;\n// Act\nrequests.getSingleUser(nonexistentId).should((response) => {\n    // Assert\n    expect(response.status).to.equal(404);\n    expect(response.headers[constants_1.headers.contentType]).to.equal(constants_1.jsonContentType);\n    expect(response.body).to.be.an('object').that.is.empty;\n});",
+              "err": {},
+              "uuid": "c71f5962-8b08-4936-a11d-cc78a0320f1e",
+              "parentUUID": "4a986501-9f89-40a3-aad4-ca81657d640f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "POST to /users with valid data should return status 201 and the user data",
+              "fullTitle": "ReqRes API Users endpoints POST to /users with valid data should return status 201 and the user data",
+              "timedOut": null,
+              "duration": 217,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Arrange\nconst requestBody = {\n    name: 'morpheus',\n    job: 'leader',\n};\n// Act\nrequests.postUser(requestBody).should((response) => {\n    // Assert\n    expect(response.status).to.equal(201);\n    expect(response.headers[constants_1.headers.contentType]).to.equal(constants_1.jsonContentType);\n    expect(response.body).to.deep.include(requestBody);\n    expect(response.body.id).to.match(constants_1.oneToThreeDigits);\n    expect(response.body.createdAt).to.match(constants_1.dateInISOFormat);\n});",
+              "err": {},
+              "uuid": "c326b799-6f90-4e6f-87d4-1500de77b9bd",
+              "parentUUID": "4a986501-9f89-40a3-aad4-ca81657d640f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "PUT to /users/id for an existing user with valid data should return status 200 and the user data",
+              "fullTitle": "ReqRes API Users endpoints PUT to /users/id for an existing user with valid data should return status 200 and the user data",
+              "timedOut": null,
+              "duration": 227,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Arrange\nconst id = 2;\nconst requestBody = {\n    name: 'morpheus',\n    job: 'zion resident',\n};\n// Act\nrequests.putUser(id, requestBody).should((response) => {\n    // Assert\n    expect(response.status).to.equal(200);\n    expect(response.headers[constants_1.headers.contentType]).to.equal(constants_1.jsonContentType);\n    expect(response.body).to.deep.include(requestBody);\n    expect(response.body.updatedAt).to.match(constants_1.dateInISOFormat);\n});",
+              "err": {},
+              "uuid": "eba63011-cfd0-4fd4-a0fb-c0f06d1f1de0",
+              "parentUUID": "4a986501-9f89-40a3-aad4-ca81657d640f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "PATCH to /users/id for an existing user with valid data should return status 200 and the user data",
+              "fullTitle": "ReqRes API Users endpoints PATCH to /users/id for an existing user with valid data should return status 200 and the user data",
+              "timedOut": null,
+              "duration": 226,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Arrange\nconst id = 2;\nconst requestBody = {\n    name: 'morpheus',\n    job: 'zion resident',\n};\n// Act\nrequests.patchUser(id, requestBody).should((response) => {\n    // Assert\n    expect(response.status).to.equal(200);\n    expect(response.headers[constants_1.headers.contentType]).to.equal(constants_1.jsonContentType);\n    expect(response.body).to.deep.include(requestBody);\n    expect(response.body.updatedAt).to.match(constants_1.dateInISOFormat);\n});",
+              "err": {},
+              "uuid": "3942264f-1186-48b7-b2bb-c930932c3da4",
+              "parentUUID": "4a986501-9f89-40a3-aad4-ca81657d640f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "DELETE to /users/id for an existing user should return status 204",
+              "fullTitle": "ReqRes API Users endpoints DELETE to /users/id for an existing user should return status 204",
+              "timedOut": null,
+              "duration": 214,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Arrange\nconst id = 2;\n// Act\nrequests.deleteUser(id).should((response) => {\n    // Assert\n    expect(response.status).to.equal(204);\n    expect(response.headers[constants_1.headers.contentLength]).to.equal('0');\n});",
+              "err": {},
+              "uuid": "9fe5d686-ac96-4dcc-a623-b0d61bd111c1",
+              "parentUUID": "4a986501-9f89-40a3-aad4-ca81657d640f",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "6637e79b-d5fc-4a7e-afa8-94f4e2e89282",
+            "4d38760d-0c64-45f6-b748-06ff48949aa0",
+            "c71f5962-8b08-4936-a11d-cc78a0320f1e",
+            "c326b799-6f90-4e6f-87d4-1500de77b9bd",
+            "eba63011-cfd0-4fd4-a0fb-c0f06d1f1de0",
+            "3942264f-1186-48b7-b2bb-c930932c3da4",
+            "9fe5d686-ac96-4dcc-a623-b0d61bd111c1"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1183,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "reports/json",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

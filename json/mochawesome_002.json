@@ -1,0 +1,124 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-04-27T03:41:47.121Z",
+    "end": "2024-04-27T03:41:47.620Z",
+    "duration": 499,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "c55467ed-4b75-45a6-8896-f32aee2f22b1",
+      "title": "",
+      "fullFile": "cypress/e2e/register.cy.ts",
+      "file": "cypress/e2e/register.cy.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "d4f29931-76d7-4108-8874-2a44e0f6f29d",
+          "title": "ReqRes API Register endpoints",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "POST to /register with valid data should return status 200 and the registration id and token",
+              "fullTitle": "ReqRes API Register endpoints POST to /register with valid data should return status 200 and the registration id and token",
+              "timedOut": null,
+              "duration": 237,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Arrange\nconst requestBody = {\n    email: 'eve.holt@reqres.in',\n    password: 'pistol',\n};\nconst expectedResponse = {\n    id: 4,\n    token: 'QpwL5tke4Pnpja7X4',\n};\n// Act\nrequests.postRegister(requestBody).should((response) => {\n    // Assert\n    expect(response.status).to.equal(200);\n    expect(response.headers[constants_1.headers.contentType]).to.equal(constants_1.jsonContentType);\n    expect(response.body).to.deep.equal(expectedResponse);\n});",
+              "err": {},
+              "uuid": "b2968ff8-2ede-40fb-bec0-f0a3c67c91fe",
+              "parentUUID": "d4f29931-76d7-4108-8874-2a44e0f6f29d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "POST to /register with missing password should return status 400 and the validation error",
+              "fullTitle": "ReqRes API Register endpoints POST to /register with missing password should return status 400 and the validation error",
+              "timedOut": null,
+              "duration": 226,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Arrange\nconst requestBody = {\n    email: 'sydney@fife',\n};\nconst expectedResponse = {\n    error: constants_1.missingPassword,\n};\n// Act\nrequests.postRegister(requestBody).should((response) => {\n    // Assert\n    expect(response.status).to.equal(400);\n    expect(response.headers[constants_1.headers.contentType]).to.equal(constants_1.jsonContentType);\n    expect(response.body).to.deep.equal(expectedResponse);\n});",
+              "err": {},
+              "uuid": "be07abb8-fffc-474e-91cd-903792774cce",
+              "parentUUID": "d4f29931-76d7-4108-8874-2a44e0f6f29d",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "b2968ff8-2ede-40fb-bec0-f0a3c67c91fe",
+            "be07abb8-fffc-474e-91cd-903792774cce"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 463,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "reports/json",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
